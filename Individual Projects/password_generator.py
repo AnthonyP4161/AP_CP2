@@ -7,10 +7,11 @@ def main():
     length = int(input("How many characters does the password need to be(Please enter digits, not words)\nInput: "))
     lower = input("Does the password need lowercase letters (Y/N)\nInput: ").upper().strip()
     upper = input("Does the password need uppercase letters (Y/N)\nInput: ").upper().strip()
-    num = input("Does the password need numers (Y/N)\nInput: ").upper().strip()
+    num = input("Does the password need numbers (Y/N)\nInput: ").upper().strip()
     spec_char = input("Does the password need special characters (Y/N)\nInput: ").upper().strip()
     password = ""
-    for i in range(0,3):
+    for i in range(0,4):
+        password = ""
         while True:
             rand = random.randint(1,4)
             if rand == 1:
@@ -30,8 +31,7 @@ def main():
                     char = random.choice(spec_char_list)
                     password = password+char
             if len(password)==length:
-                password_list = []
-                password_list.append(password)
+                print(f"{i+1}: {password}")
                 break
             
 while True:
